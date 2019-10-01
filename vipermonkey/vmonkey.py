@@ -142,7 +142,7 @@ def _read_doc_text_libreoffice(data):
         rc = -1
     try:
         if (rc != 0):
-            rc = subprocess.call(["soffice", "--headless", "-h"], stdout=out, stderr=out)
+            rc = subprocess.call(["soffice", "--headless", "--terminate_after_init"], stdout=out, stderr=out)
         if (rc != 0):
             # Not installed.
             log.error("Cannot read doc text with LibreOffice. LibreOffice not installed.")
@@ -1112,7 +1112,7 @@ def load_excel_libreoffice(data):
         rc = -1
     try:
         if (rc != 0):
-            rc = subprocess.call(["soffice", "--headless", "-h"], stdout=out, stderr=out)
+            rc = subprocess.call(["soffice", "--headless", "--terminate_after_init"], stdout=out, stderr=out)
         if (rc != 0):
 
             # Not installed.
